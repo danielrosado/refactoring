@@ -33,7 +33,7 @@ public class Customer {
 
     private String getRentalTitleAndCharge() {
         return this.rentals.stream()
-                .map(rental -> "\t" + rental.getMovie().getTitle() + "\t" + rental.getCharge() + "\n")
+                .map(rental -> "\t" + rental.getMovieTitle() + "\t" + rental.getCharge() + "\n")
                 .collect(Collectors.joining());
     }
 
