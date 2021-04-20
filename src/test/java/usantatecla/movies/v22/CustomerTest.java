@@ -9,7 +9,7 @@ public class CustomerTest {
 	@Test
 	public void withoutRentalsTest() {
 		String customerName = "customerName";
-		usantatecla.movies.v22.Customer customer = new CustomerBuilder().name(customerName).build();
+		Customer customer = new CustomerBuilder().name(customerName).build();
 
 		String statement = customer.statement();
 
@@ -21,10 +21,10 @@ public class CustomerTest {
 	@Test
 	public void regularRental1DayTest() {
 		String movieName = "movieName";
-		usantatecla.movies.v22.Movie movie = new MovieBuilder().title(movieName).regular().build();
-		usantatecla.movies.v22.Rental rental = new RentalBuilder().movie(movie).daysRented(1).build();
+		Movie movie = new MovieBuilder().title(movieName).regular().build();
+		Rental rental = new RentalBuilder().movie(movie).daysRented(1).build();
 		String customerName = "customerName";
-		usantatecla.movies.v22.Customer customer = new CustomerBuilder().name(customerName).rental(rental).build();
+		Customer customer = new CustomerBuilder().name(customerName).rental(rental).build();
 
 		String statement = customer.statement();
 
@@ -36,10 +36,10 @@ public class CustomerTest {
 	@Test
 	public void regularRental2DayTest() {
 		String movieName = "movieName";
-		usantatecla.movies.v22.Movie movie = new MovieBuilder().title(movieName).regular().build();
-		usantatecla.movies.v22.Rental rental = new RentalBuilder().movie(movie).daysRented(2).build();
+		Movie movie = new MovieBuilder().title(movieName).regular().build();
+		Rental rental = new RentalBuilder().movie(movie).daysRented(2).build();
 		String customerName = "customerName";
-		usantatecla.movies.v22.Customer customer = new CustomerBuilder().name(customerName).rental(rental).build();
+		Customer customer = new CustomerBuilder().name(customerName).rental(rental).build();
 
 		String statement = customer.statement();
 
@@ -51,10 +51,10 @@ public class CustomerTest {
 	@Test
 	public void regularRental3DayTest() {
 		String movieName = "movieName";
-		usantatecla.movies.v22.Movie movie = new MovieBuilder().title(movieName).regular().build();
-		usantatecla.movies.v22.Rental rental = new RentalBuilder().movie(movie).daysRented(3).build();
+		Movie movie = new MovieBuilder().title(movieName).regular().build();
+		Rental rental = new RentalBuilder().movie(movie).daysRented(3).build();
 		String customerName = "customerName";
-		usantatecla.movies.v22.Customer customer = new CustomerBuilder().name(customerName).rental(rental).build();
+		Customer customer = new CustomerBuilder().name(customerName).rental(rental).build();
 
 		String statement = customer.statement();
 
@@ -66,10 +66,10 @@ public class CustomerTest {
 	@Test
 	public void newReleaseRental1DayTest() {
 		String movieName = "movieName";
-		usantatecla.movies.v22.Movie movie = new MovieBuilder().title(movieName).newRelease().build();
-		usantatecla.movies.v22.Rental rental = new RentalBuilder().movie(movie).daysRented(1).build();
+		Movie movie = new MovieBuilder().title(movieName).newRelease().build();
+		Rental rental = new RentalBuilder().movie(movie).daysRented(1).build();
 		String customerName = "customerName";
-		usantatecla.movies.v22.Customer customer = new CustomerBuilder().name(customerName).rental(rental).build();
+		Customer customer = new CustomerBuilder().name(customerName).rental(rental).build();
 
 		String statement = customer.statement();
 
@@ -81,10 +81,10 @@ public class CustomerTest {
 	@Test
 	public void newReleaseRental2DayTest() {
 		String movieName = "movieName";
-		usantatecla.movies.v22.Movie movie = new MovieBuilder().title(movieName).newRelease().build();
-		usantatecla.movies.v22.Rental rental = new RentalBuilder().movie(movie).daysRented(2).build();
+		Movie movie = new MovieBuilder().title(movieName).newRelease().build();
+		Rental rental = new RentalBuilder().movie(movie).daysRented(2).build();
 		String customerName = "customerName";
-		usantatecla.movies.v22.Customer customer = new CustomerBuilder().name(customerName).rental(rental).build();
+		Customer customer = new CustomerBuilder().name(customerName).rental(rental).build();
 
 		String statement = customer.statement();
 
@@ -96,10 +96,10 @@ public class CustomerTest {
 	@Test
 	public void newReleaseRental3DayTest() {
 		String movieName = "movieName";
-		usantatecla.movies.v22.Movie movie = new MovieBuilder().title(movieName).newRelease().build();
-		usantatecla.movies.v22.Rental rental = new RentalBuilder().movie(movie).daysRented(3).build();
+		Movie movie = new MovieBuilder().title(movieName).newRelease().build();
+		Rental rental = new RentalBuilder().movie(movie).daysRented(3).build();
 		String customerName = "customerName";
-		usantatecla.movies.v22.Customer customer = new CustomerBuilder().name(customerName).rental(rental).build();
+		Customer customer = new CustomerBuilder().name(customerName).rental(rental).build();
 
 		String statement = customer.statement();
 
@@ -111,10 +111,10 @@ public class CustomerTest {
 	@Test
 	public void childrensRental1DayTest() {
 		String movieName = "movieName";
-		usantatecla.movies.v22.Movie movie = new MovieBuilder().title(movieName).childrens().build();
-		usantatecla.movies.v22.Rental rental = new RentalBuilder().movie(movie).daysRented(1).build();
+		Movie movie = new MovieBuilder().title(movieName).childrens().build();
+		Rental rental = new RentalBuilder().movie(movie).daysRented(1).build();
 		String customerName = "customerName";
-		usantatecla.movies.v22.Customer customer = new CustomerBuilder().name(customerName).rental(rental).build();
+		Customer customer = new CustomerBuilder().name(customerName).rental(rental).build();
 
 		String statement = customer.statement();
 
@@ -126,10 +126,10 @@ public class CustomerTest {
 	@Test
 	public void childrensRental3DayTest() {
 		String movieName = "movieName";
-		usantatecla.movies.v22.Movie movie = new MovieBuilder().title(movieName).childrens().build();
-		usantatecla.movies.v22.Rental rental = new RentalBuilder().movie(movie).daysRented(3).build();
+		Movie movie = new MovieBuilder().title(movieName).childrens().build();
+		Rental rental = new RentalBuilder().movie(movie).daysRented(3).build();
 		String customerName = "customerName";
-		usantatecla.movies.v22.Customer customer = new CustomerBuilder().name(customerName).rental(rental).build();
+		Customer customer = new CustomerBuilder().name(customerName).rental(rental).build();
 
 		String statement = customer.statement();
 
@@ -141,10 +141,10 @@ public class CustomerTest {
 	@Test
 	public void childrensRental4DayTest() {
 		String movieName = "movieName";
-		usantatecla.movies.v22.Movie movie = new MovieBuilder().title(movieName).childrens().build();
-		usantatecla.movies.v22.Rental rental = new RentalBuilder().movie(movie).daysRented(4).build();
+		Movie movie = new MovieBuilder().title(movieName).childrens().build();
+		Rental rental = new RentalBuilder().movie(movie).daysRented(4).build();
 		String customerName = "customerName";
-		usantatecla.movies.v22.Customer customer = new CustomerBuilder().name(customerName).rental(rental).build();
+		Customer customer = new CustomerBuilder().name(customerName).rental(rental).build();
 
 		String statement = customer.statement();
 
@@ -156,12 +156,12 @@ public class CustomerTest {
 	@Test
 	public void rentalTest() {
 		String regularMovieName = "regularMovieName";
-		usantatecla.movies.v22.Movie regularMovie = new MovieBuilder().title(regularMovieName).regular().build();
-		usantatecla.movies.v22.Rental regularRental = new RentalBuilder().movie(regularMovie).daysRented(10).build();
+		Movie regularMovie = new MovieBuilder().title(regularMovieName).regular().build();
+		Rental regularRental = new RentalBuilder().movie(regularMovie).daysRented(10).build();
 		
 		String newReleaseMovieName = "newReleaseMovieName";
-		usantatecla.movies.v22.Movie newReleaseMovie = new MovieBuilder().title(newReleaseMovieName).newRelease().build();
-		usantatecla.movies.v22.Rental newReleaseRental = new RentalBuilder().movie(newReleaseMovie).daysRented(10).build();
+		Movie newReleaseMovie = new MovieBuilder().title(newReleaseMovieName).newRelease().build();
+		Rental newReleaseRental = new RentalBuilder().movie(newReleaseMovie).daysRented(10).build();
 		
 		String childrensMovieName = "childrensMovieName";
 		Movie childrensMovie = new MovieBuilder().title(childrensMovieName).childrens().build();
