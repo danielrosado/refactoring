@@ -1,17 +1,10 @@
 package usantatecla.movies.v24;
 
-import usantatecla.movies.v23.ChildrenPrice;
-import usantatecla.movies.v23.Movie;
-import usantatecla.movies.v23.NewReleasePrice;
-import usantatecla.movies.v23.Price;
-import usantatecla.movies.v23.RegularPrice;
-
 public class MovieBuilder {
 
 	private String title;
-	
-	private Price price;
-	
+	private Movie movie;
+
 	public MovieBuilder() {
 		title = "movieName";
 	}
@@ -22,21 +15,21 @@ public class MovieBuilder {
 	}
 	
 	public MovieBuilder childrens() {
-		this.price = new ChildrenPrice();
+		this.movie = new ChildrenMovie(this.title);
 		return this;
 	}
 	
 	public MovieBuilder regular() {
-		this.price = new RegularPrice();
+		this.movie = new RegularMovie(this.title);
 		return this;
 	}
 	
 	public MovieBuilder newRelease() {
-		this.price = new NewReleasePrice();
+		this.movie = new NewReleaseMovie(this.title);
 		return this;
 	}
 	
-	public usantatecla.movies.v23.Movie build() {
-		return new Movie(title, price);
+	public Movie build() {
+		return this.movie;
 	}
 }
