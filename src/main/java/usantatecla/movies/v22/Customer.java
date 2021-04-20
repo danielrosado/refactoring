@@ -1,58 +1,48 @@
 package usantatecla.movies.v22;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Customer {
 
-	private String name;
-	
-	private List<Rental> rentals;
+    private String name;
 
-	public Customer(String name) {
-		this.name = name;
-		rentals = new ArrayList<Rental>();
-	}
+    private List<Rental> rentals;
 
-	public void addRental(Rental rental) {
-		rentals.add(rental);
-	}
+    public Customer(String name) {
+        this.name = name;
+        rentals = new ArrayList<Rental>();
+    }
 
-	public String getName() {
-		return name;
-	}
+    public void addRental(Rental rental) {
+        rentals.add(rental);
+    }
+
+    public String getName() {
+        return name;
+    }
 
 	public String statement() {
-		Iterator<Rental> rentals = this.rentals.iterator();
 		String result = "Rental Record for " + this.getName() + "\n";
-		while (rentals.hasNext()) {
-			Rental rental = rentals.next();
-			result += "\t" + rental.getMovie().getTitle() + "\t" + String.valueOf(rental.getCharge()) + "\n";
-		}
-		result += "Amount owed is " + String.valueOf(this.getTotalCharge()) + "\n";
-		result += "You earned " + String.valueOf(this.getTotalFrequentRenterPoints()) + " frequent renter points";
+		result += this.getRentalTitleAndCharge();
+		result += "Amount owed is " + this.getTotalCharge() + "\n";
+		result += "You earned " + this.getTotalFrequentRenterPoints() + " frequent renter points";
 		return result;
 	}
 
-	private double getTotalCharge() {
-		double result = 0;
-		Iterator<Rental> rentals = this.rentals.iterator();
-		while (rentals.hasNext()) {
-			Rental rental = rentals.next();
-			result += rental.getCharge();
-		}
-		return result;
-	}
-	
-	private int getTotalFrequentRenterPoints() {
-		int result = 0;
-		Iterator<Rental> rentals = this.rentals.iterator();
-		while (rentals.hasNext()) {
-			Rental rental = rentals.next();
-			result += rental.getFrequentRenterPoints();
-		}
-		return result;
-	}
+    private String getRentalTitleAndCharge() {
+        return this.rentals.stream()
+                .map(rental -> "\t" + rental.getMovie().getTitle() + "\t" + rental.getCharge() + "\n")
+                .collect(Collectors.joining());
+    }
+
+    private double getTotalCharge() {
+        return this.rentals.stream().mapToDouble(Rental::getCharge).sum();
+    }
+
+    private int getTotalFrequentRenterPoints() {
+        return this.rentals.stream().mapToInt(Rental::getFrequentRenterPoints).sum();
+    }
 
 }
