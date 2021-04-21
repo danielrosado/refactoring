@@ -19,7 +19,25 @@ public class CustomerTest {
 	}
 
 	@Test
-	public void regularRental1DayTest() {
+	public void regularRental1DayTestCharge() {
+		double expected = 2;
+		Movie movie = new MovieBuilder().title("movieName").regular().build();
+		Rental rental = new RentalBuilder().movie(movie).daysRented(1).build();
+		double result = rental.getCharge();
+		assertEquals(expected, result, 0);
+	}
+
+	@Test
+	public void regularRental1DayTestFrequentPoints() {
+		int expected = 1;
+		Movie movie = new MovieBuilder().title("movieName").regular().build();
+		Rental rental = new RentalBuilder().movie(movie).daysRented(1).build();
+		int result = rental.getFrequentRenterPoints();
+		assertEquals(expected, result);
+	}
+
+	@Test
+	public void regularRental1DayFormatTest() {
 		String movieName = "movieName";
 		Movie movie = new MovieBuilder().title(movieName).regular().build();
 		Rental rental = new RentalBuilder().movie(movie).daysRented(1).build();
@@ -33,8 +51,27 @@ public class CustomerTest {
 		assertEquals(result, statement);
 	}
 
+
 	@Test
-	public void regularRental2DayTest() {
+	public void regularRental2DayTestCharge() {
+		double expected = 2;
+		Movie movie = new MovieBuilder().title("movieName").regular().build();
+		Rental rental = new RentalBuilder().movie(movie).daysRented(2).build();
+		double result = rental.getCharge();
+		assertEquals(expected, result, 0);
+	}
+
+	@Test
+	public void regularRental2DayTestFrequentPoints() {
+		int expected = 1;
+		Movie movie = new MovieBuilder().title("movieName").regular().build();
+		Rental rental = new RentalBuilder().movie(movie).daysRented(2).build();
+		int result = rental.getFrequentRenterPoints();
+		assertEquals(expected, result);
+	}
+
+	@Test
+	public void regularRental2DayFormatTest() {
 		String movieName = "movieName";
 		Movie movie = new MovieBuilder().title(movieName).regular().build();
 		Rental rental = new RentalBuilder().movie(movie).daysRented(2).build();
@@ -49,7 +86,24 @@ public class CustomerTest {
 	}
 
 	@Test
-	public void regularRental3DayTest() {
+	public void regularRental3DayTestCharge() {
+		double expected = 3.5;
+		Movie movie = new MovieBuilder().title("movieName").regular().build();
+		Rental rental = new RentalBuilder().movie(movie).daysRented(3).build();
+		double result = rental.getCharge();
+		assertEquals(expected, result, 0);
+	}
+
+	@Test
+	public void regularRental3DayTestFrequentPoints() {
+		int expected = 1;
+		Movie movie = new MovieBuilder().title("movieName").regular().build();
+		Rental rental = new RentalBuilder().movie(movie).daysRented(3).build();
+		int result = rental.getFrequentRenterPoints();
+		assertEquals(expected, result);
+	}
+	@Test
+	public void regularRental3DayFormatTest() {
 		String movieName = "movieName";
 		Movie movie = new MovieBuilder().title(movieName).regular().build();
 		Rental rental = new RentalBuilder().movie(movie).daysRented(3).build();
@@ -64,7 +118,25 @@ public class CustomerTest {
 	}
 
 	@Test
-	public void newReleaseRental1DayTest() {
+	public void newReleaseRental1DayTestCharge() {
+		double expected = 3;
+		Movie movie = new MovieBuilder().title("movieName").newRelease().build();
+		Rental rental = new RentalBuilder().movie(movie).daysRented(1).build();
+		double result = rental.getCharge();
+		assertEquals(expected, result, 0);
+	}
+
+	@Test
+	public void newReleaseRental1DayTestFrequentPoints() {
+		int expected = 1;
+		Movie movie = new MovieBuilder().title("movieName").newRelease().build();
+		Rental rental = new RentalBuilder().movie(movie).daysRented(1).build();
+		int result = rental.getFrequentRenterPoints();
+		assertEquals(expected, result);
+	}
+
+	@Test
+	public void newReleaseRental1DayFormatTest() {
 		String movieName = "movieName";
 		Movie movie = new MovieBuilder().title(movieName).newRelease().build();
 		Rental rental = new RentalBuilder().movie(movie).daysRented(1).build();
@@ -78,8 +150,27 @@ public class CustomerTest {
 		assertEquals(result, statement);
 	}
 
+
 	@Test
-	public void newReleaseRental2DayTest() {
+	public void newReleaseRental2DayTestCharge() {
+		double expected = 3;
+		Movie movie = new MovieBuilder().title("movieName").newRelease().build();
+		Rental rental = new RentalBuilder().movie(movie).daysRented(2).build();
+		double result = rental.getCharge();
+		assertEquals(expected, result, 0);
+	}
+
+	@Test
+	public void newReleaseRental2DayTestFrequentPoints() {
+		int expected = 2;
+		Movie movie = new MovieBuilder().title("movieName").newRelease().build();
+		Rental rental = new RentalBuilder().movie(movie).daysRented(2).build();
+		int result = rental.getFrequentRenterPoints();
+		assertEquals(expected, result);
+	}
+
+	@Test
+	public void newReleaseRental2DayFormatTest() {
 		String movieName = "movieName";
 		Movie movie = new MovieBuilder().title(movieName).newRelease().build();
 		Rental rental = new RentalBuilder().movie(movie).daysRented(2).build();
@@ -91,6 +182,25 @@ public class CustomerTest {
 		String result = new StatementBuilder().customerName(customerName).movie(movieName, 3)
 				.totalAmount(3).frequentRenterPoints(2).build();
 		assertEquals(result, statement);
+	}
+
+
+	@Test
+	public void newReleaseRental3DayTestCharge() {
+		double expected = 3;
+		Movie movie = new MovieBuilder().title("movieName").newRelease().build();
+		Rental rental = new RentalBuilder().movie(movie).daysRented(3).build();
+		double result = rental.getCharge();
+		assertEquals(expected, result, 0);
+	}
+
+	@Test
+	public void newReleaseRental3DayTestFrequentPoints() {
+		int expected = 2;
+		Movie movie = new MovieBuilder().title("movieName").newRelease().build();
+		Rental rental = new RentalBuilder().movie(movie).daysRented(3).build();
+		int result = rental.getFrequentRenterPoints();
+		assertEquals(expected, result);
 	}
 
 	@Test
@@ -108,8 +218,27 @@ public class CustomerTest {
 		assertEquals(result, statement);
 	}
 
+
 	@Test
-	public void childrensRental1DayTest() {
+	public void childrenRental1DayTestCharge() {
+		double expected = 1.5;
+		Movie movie = new MovieBuilder().title("movieName").childrens().build();
+		Rental rental = new RentalBuilder().movie(movie).daysRented(1).build();
+		double result = rental.getCharge();
+		assertEquals(expected, result, 0);
+	}
+
+	@Test
+	public void childrenRental1DayTestFrequentPoints() {
+		int expected = 1;
+		Movie movie = new MovieBuilder().title("movieName").childrens().build();
+		Rental rental = new RentalBuilder().movie(movie).daysRented(1).build();
+		int result = rental.getFrequentRenterPoints();
+		assertEquals(expected, result);
+	}
+
+	@Test
+	public void childrenRental1DayFormatTest() {
 		String movieName = "movieName";
 		Movie movie = new MovieBuilder().title(movieName).childrens().build();
 		Rental rental = new RentalBuilder().movie(movie).daysRented(1).build();
@@ -123,8 +252,27 @@ public class CustomerTest {
 		assertEquals(result, statement);
 	}
 
+
 	@Test
-	public void childrensRental3DayTest() {
+	public void childrenRental3DayTestCharge() {
+		double expected = 1.5;
+		Movie movie = new MovieBuilder().title("movieName").childrens().build();
+		Rental rental = new RentalBuilder().movie(movie).daysRented(3).build();
+		double result = rental.getCharge();
+		assertEquals(expected, result, 0);
+	}
+
+	@Test
+	public void childrenRental3DayTestFrequentPoints() {
+		int expected = 1;
+		Movie movie = new MovieBuilder().title("movieName").childrens().build();
+		Rental rental = new RentalBuilder().movie(movie).daysRented(3).build();
+		int result = rental.getFrequentRenterPoints();
+		assertEquals(expected, result);
+	}
+
+	@Test
+	public void childrenRental3DayFormatTest() {
 		String movieName = "movieName";
 		Movie movie = new MovieBuilder().title(movieName).childrens().build();
 		Rental rental = new RentalBuilder().movie(movie).daysRented(3).build();
@@ -139,7 +287,25 @@ public class CustomerTest {
 	}
 
 	@Test
-	public void childrensRental4DayTest() {
+	public void childrenRental4DayTestCharge() {
+		double expected = 6;
+		Movie movie = new MovieBuilder().title("movieName").childrens().build();
+		Rental rental = new RentalBuilder().movie(movie).daysRented(4).build();
+		double result = rental.getCharge();
+		assertEquals(expected, result, 0);
+	}
+
+	@Test
+	public void childrenRental4DayTestFrequentPoints() {
+		int expected = 1;
+		Movie movie = new MovieBuilder().title("movieName").childrens().build();
+		Rental rental = new RentalBuilder().movie(movie).daysRented(4).build();
+		int result = rental.getFrequentRenterPoints();
+		assertEquals(expected, result);
+	}
+
+	@Test
+	public void childrenRental4DayFormatTest() {
 		String movieName = "movieName";
 		Movie movie = new MovieBuilder().title(movieName).childrens().build();
 		Rental rental = new RentalBuilder().movie(movie).daysRented(4).build();
